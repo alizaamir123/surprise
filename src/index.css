@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-display: "Playfair Display", Georgia, serif;
+    --font-script: "Alex Brush", cursive;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F2;
+    color: #2C2420;
+    overflow-x: hidden;
+  }
+}
+
+.font-serif-luxury {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-display-luxury {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.font-script-romantic {
+  font-family: "Alex Brush", cursive;
+}
+
+.font-sans-clean {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Realistic Candle Flame Keyframe Animation */
+@keyframes flameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(-1deg);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8)) drop-shadow(0 0 25px rgba(239, 68, 68, 0.5));
+  }
+  25% {
+    transform: scale(1.04, 0.96) rotate(1.5deg);
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.9)) drop-shadow(0 0 30px rgba(245, 158, 11, 0.6));
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-1deg);
+    filter: drop-shadow(0 0 9px rgba(245, 158, 11, 0.75)) drop-shadow(0 0 20px rgba(239, 68, 68, 0.45));
+  }
+  75% {
+    transform: scale(1.02, 0.98) rotate(1deg);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.85)) drop-shadow(0 0 28px rgba(245, 158, 11, 0.55));
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.8s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+/* Candle smoke wisp after blowing out */
+@keyframes smokeWisp {
+  0% {
+    opacity: 0.8;
+    transform: translateY(0) scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-28px) scale(1.2) rotate(15deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(1.8) rotate(-20deg);
+  }
+}
+
+.animate-smoke {
+  animation: smokeWisp 1.6s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+}
+
+/* Subtle Golden Bokeh Dust */
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-40px) translateX(15px) scale(1.15);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-80px) translateX(-10px) scale(0.9);
+    opacity: 0;
+  }
+}
+
+.particle-drift {
+  animation: floatParticle linear infinite;
+}
+
+/* Vintage Paper & Polaroid Texture */
+.parchment-card {
+  background-color: #FAF5ED;
+  background-image: radial-gradient(#E8DACB 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+  box-shadow: 0 10px 30px -5px rgba(62, 39, 35, 0.08), 0 0 0 1px rgba(198, 160, 82, 0.15);
+}
+
+.polaroid-frame {
+  background: #FFFFFF;
+  box-shadow: 0 12px 30px -8px rgba(44, 36, 32, 0.12), 0 4px 10px -2px rgba(44, 36, 32, 0.06);
+  border: 1px solid rgba(220, 205, 190, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.polaroid-frame:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 20px 40px -10px rgba(90, 30, 43, 0.18), 0 6px 16px -2px rgba(44, 36, 32, 0.08);
+}
+
+/* Custom Scrollbar for Luxury Feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8C7B5;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A052;
+}
